@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 15px;
+    margin-top: 30px;
+}
+
+#vs {
+    padding-top: 20px
+}
+

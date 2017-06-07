@@ -36,6 +36,7 @@ function setGameElements() {
             resultsElem.style.display = "block";
         break;
         case 'ended':
+            newGameElem.style.display = 'block';
             newGameBtn.innerText = 'Once again';
         break;
         case 'notStarted':
@@ -50,9 +51,6 @@ function setGameElements() {
 var playerPointsElem = document.getElementById('js-playerPoints'),
     playerNameElem = document.getElementById('js-playerName'),
     computerPointsElem = document.getElementById('js-computerPoints');
-
-
-
 
 function newGame() {
     player.name = prompt('Please enter your name');
@@ -109,6 +107,8 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = 'remis';
     }
     
+    setGamePoints();
+    checkWin();
 }
 
 function setGamePoints() {
@@ -118,12 +118,12 @@ function setGamePoints() {
 
 function checkWin() {
     if (player.score == 10) {
-        alert(player.name + 'wins');
+        alert(player.name + ' wins');
         gameState = 'ended';
+        setGameElements('ended');
     } else if (computer.score == 10) {
         alert("Computer wins");
         gameState = 'ended';
+        setGameElements('ended');
     }
 }
-
-checkWin();

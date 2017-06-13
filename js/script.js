@@ -117,13 +117,13 @@ function setGamePoints() {
 }
 
 function checkWin() {
-    if (player.score == 10) {
+    if (player.score === 10) {
         alert(player.name + ' wins');
         gameState = 'ended';
-        setGameElements('ended');
-    } else if (computer.score == 10) {
+        setGameElements();
+    } else if (computer.score === 10) {
         alert("Computer wins");
         gameState = 'ended';
-        setGameElements('ended');
+        setGameElements();
     }
 }
